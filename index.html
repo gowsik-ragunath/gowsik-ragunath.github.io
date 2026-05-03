@@ -1,426 +1,917 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Gowsik V">
 
-    <meta property="og:title" content="Gowsik | Software developer">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gowsik.info/">
-    <meta property="og:site_name" content="Gowsik">
+  <meta property="og:title" content="Gowsik V — Software Developer">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gowsik.info/">
+  <meta property="og:site_name" content="Gowsik">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://gowsik.info/">
-    <meta name="twitter:title" content="Gowsik | Software developer">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gowsik.info/">
+  <meta name="twitter:title" content="Gowsik V — Software Developer">
 
-    <title>Gowsik | Software Developer</title>
+  <title>Gowsik V — Software Developer</title>
 
-    <link rel="icon" type="image/x-icon" href="images/favicon-dark.ico">
+  <link rel="icon" type="image/x-icon" href="images/favicon-dark.ico">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/unicons.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V342LMXNEK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V342LMXNEK');
+  </script>
 
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="css/tooplate-style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V342LMXNEK"></script>
-      <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    :root {
+      --bg:        #ffffff;
+      --bg2:       #f6f6f4;
+      --bg3:       #efefec;
+      --fg:        #1a1a1a;
+      --fg-dim:    #555550;
+      --fg-muted:  #999990;
+      --accent:    #d97706;
+      --accent-lt: #fef3c7;
+      --border:    #e4e4e0;
+      --font:      'JetBrains Mono', monospace;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
 
-          gtag('config', 'G-V342LMXNEK');
-      </script>
-    
-<!--
+    html { scroll-behavior: smooth; }
 
-Tooplate 2115 Marvel
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
 
-https://www.tooplate.com/view/2115-marvel
+    a { color: inherit; text-decoration: none; }
 
--->
-  </head>
-  <body class="dark-mode">
+    /* ─── NAV ─────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 48px;
+      height: 56px;
+    }
 
-    <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
-            <a class="navbar-brand py-3 pl-1" href="index.html">
-              <img src="images/favicon-32x32.png" class="mr-2 dark"/>
-              Gowsik
-            </a>
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-mark {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--fg-muted);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--fg); }
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="https://blog.gowsik.info" class="nav-link" target="_blank"><span data-hover="Blog">Blog</span></a>
-                  </li>
-                </ul>
+    /* ─── HERO ────────────────────────────────── */
+    #hero {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 96px 48px 80px;
+      border-bottom: 1px solid var(--border);
+    }
 
-                <ul class="navbar-nav">
-                    <div class="ml-lg-4">
-                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                        <i class="color-mode-icon active"></i>
-                        Color mode
-                      </div>
-                    </div>
-                </ul>
-            </div>
+    .hero-prompt {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+
+    .hero-headline {
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--fg);
+      min-height: 2.4em;
+    }
+    .hero-headline .hl { color: var(--accent); }
+
+    .h-cursor {
+      display: inline-block;
+      width: 0.45em; height: 0.8em;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .hero-sub {
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--fg-dim);
+      max-width: 520px;
+      line-height: 1.85;
+      opacity: 0;
+    }
+
+    .hero-links {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      opacity: 0;
+    }
+    .hero-links a {
+      font-size: 13px;
+      color: var(--fg-muted);
+      width: fit-content;
+      transition: color 0.15s;
+      border-bottom: 1px solid transparent;
+    }
+    .hero-links a:first-child {
+      color: var(--fg);
+      border-bottom-color: var(--border);
+      padding-bottom: 1px;
+    }
+    .hero-links a:hover { color: var(--accent); }
+
+    /* ─── PAGE LAYOUT ─────────────────────────── */
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* ─── SECTION ─────────────────────────────── */
+    .section-block {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sec-label {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── ABOUT ───────────────────────────────── */
+    .about-text h2 {
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--fg);
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color: var(--fg-dim);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 14px;
+    }
+
+    .about-facts {
+      margin-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .fact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      font-size: 12px;
+    }
+    .fact-key { font-family: var(--font-mono); color: var(--fg-muted); letter-spacing: 0.06em; font-size: 11px; }
+    .fact-val { color: var(--fg); }
+
+    /* ─── WORK ────────────────────────────────── */
+    .work-item {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .work-item:first-child { border-top: 1px solid var(--border); }
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+    .work-role {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .work-year {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--fg-muted);
+      letter-spacing: 0.06em;
+    }
+    .work-company {
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .work-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .work-bullets li {
+      font-size: 12px;
+      color: var(--fg-dim);
+      padding-left: 14px;
+      position: relative;
+    }
+    .work-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--fg-muted);
+      font-size: 11px;
+    }
+
+    /* ─── PROJECTS ────────────────────────────── */
+    .project-card {
+      display: block;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+    .project-card:first-child { border-top: 1px solid var(--border); }
+
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+    .proj-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--fg);
+      transition: color 0.15s;
+    }
+    .project-card:hover .proj-name { color: var(--accent); }
+    .proj-arrow {
+      font-size: 14px;
+      color: var(--fg-muted);
+      transition: color 0.15s, transform 0.15s;
+    }
+    .project-card:hover .proj-arrow { color: var(--accent); transform: translate(2px, -2px); }
+    .proj-desc {
+      font-size: 12px;
+      color: var(--fg-dim);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .proj-tag {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: var(--fg-muted);
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── BLOG ────────────────────────────────── */
+    .blog-cta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 32px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+      gap: 32px;
+    }
+    .blog-cta:hover { background: var(--bg3); }
+    .blog-cta:hover .blog-arrow { color: var(--accent); transform: translateX(4px); }
+
+    .blog-left h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .blog-left p {
+      font-size: 12px;
+      color: var(--fg-dim);
+    }
+    .blog-arrow {
+      font-size: 20px;
+      color: var(--fg-muted);
+      flex-shrink: 0;
+      transition: color 0.15s, transform 0.2s;
+    }
+
+    .blog-posts {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .blog-post-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      gap: 16px;
+      transition: color 0.15s;
+      cursor: pointer;
+      color: var(--fg-dim);
+    }
+    .blog-post-row:first-child { border-top: 1px solid var(--border); }
+    .blog-post-row:hover { color: var(--fg); }
+    .blog-post-row:hover .bp-title { color: var(--accent); }
+    .bp-title {
+      color: var(--fg);
+      font-size: 12px;
+      transition: color 0.15s;
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .bp-meta {
+      color: var(--fg-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    /* ─── EDUCATION ───────────────────────────── */
+    .edu-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-item:first-child { border-top: 1px solid var(--border); }
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .edu-degree { font-size: 13px; font-weight: 700; color: var(--fg); }
+    .edu-year { font-size: 11px; font-family: var(--font-mono); color: var(--fg-muted); }
+    .edu-inst { font-size: 12px; color: var(--fg-dim); margin-top: 3px; }
+
+    /* ─── SKILLS ──────────────────────────────── */
+    .skills-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .skill-group {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 24px;
+    }
+    .skill-group-title {
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .skill-list li {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--fg-dim);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-list li::before {
+      content: '';
+      width: 3px; height: 3px;
+      background: var(--fg-muted);
+      flex-shrink: 0;
+    }
+
+    /* ─── CONTACT ─────────────────────────────── */
+    .contact-intro {
+      margin-bottom: 32px;
+    }
+    .contact-intro h2 {
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      margin-bottom: 12px;
+    }
+    .contact-intro p {
+      font-size: 13px;
+      color: var(--fg-dim);
+      max-width: 460px;
+      line-height: 1.85;
+    }
+    .contact-links { display: flex; flex-direction: column; }
+    .contact-link-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      padding: 16px 0;
+      font-size: 12px;
+      color: var(--fg-dim);
+      cursor: pointer;
+      transition: color 0.15s;
+      gap: 12px;
+    }
+    .contact-link-row:last-child { border-bottom: 1px solid var(--border); }
+    .contact-link-row:hover { color: var(--fg); }
+    .contact-link-row:hover .cl-arrow { color: var(--accent); }
+    .cl-label { color: var(--fg-muted); min-width: 60px; letter-spacing: 0.04em; }
+    .cl-val { flex: 1; }
+    .cl-arrow { color: var(--fg-muted); transition: color 0.15s; }
+
+    /* ─── FOOTER ──────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--fg-muted);
+      letter-spacing: 0.04em;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ─── SCROLL REVEAL ───────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .reveal-stagger.in > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.04s }
+    .reveal-stagger.in > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.10s }
+    .reveal-stagger.in > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.16s }
+    .reveal-stagger.in > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.22s }
+    .reveal-stagger.in > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.28s }
+    .reveal-stagger.in > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.34s }
+
+    @keyframes fadeup {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 680px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 18px; }
+      #hero, .page-wrap { padding-left: 20px; padding-right: 20px; }
+      .skills-cols { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark"></div>
+    gowsik
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#work">work</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#blog">blog</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div id="hero">
+  <div class="hero-prompt">~/portfolio $</div>
+  <div class="hero-headline" id="hero-headline"></div>
+  <div class="hero-sub" id="hero-sub">
+    I build products that scale — web apps, DevOps pipelines, and everything in between.
+    Based in India, open to remote.
+  </div>
+  <div class="hero-links" id="hero-links">
+    <a href="mailto:v.gowsik@gmail.com">v.gowsik@gmail.com</a>
+    <a href="https://github.com/gowsik-ragunath" target="_blank">github ↗</a>
+    <a href="https://blog.gowsik.info" target="_blank">blog ↗</a>
+    <a href="https://drive.google.com/file/d/1kbyjf_7fMu5Fo1hTjiJ3oM5ar6tDVuhO/view" target="_blank">resume ↗</a>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- ── ABOUT ── -->
+  <div class="section-block" id="about">
+    <div class="sec-label reveal">about</div>
+    <div class="about-text reveal">
+      <h2>Software developer who ships.</h2>
+      <p>I'm Gowsik V — a full-stack developer with a focus on Ruby on Rails, React, and cloud infrastructure. I enjoy working at the intersection of clean architecture and fast iteration.</p>
+      <p>From bootstrapping early-stage SaaS products to deploying at scale on Kubernetes, I've been across the stack — and I'm happiest when there's a hard problem to solve.</p>
+    </div>
+    <div class="about-facts reveal">
+      <div class="fact-row"><span class="fact-key">location</span><span class="fact-val">Namakkal, Tamil Nadu</span></div>
+      <div class="fact-row"><span class="fact-key">focus</span><span class="fact-val">Web · DevOps · Systems</span></div>
+      <div class="fact-row"><span class="fact-key">experience</span><span class="fact-val">6+ years</span></div>
+      <div class="fact-row"><span class="fact-key">availability</span><span class="fact-val" style="color:var(--accent)">● open to work</span></div>
+      <div class="fact-row"><span class="fact-key">contact</span><span class="fact-val"><a href="mailto:v.gowsik@gmail.com" style="border-bottom:1px solid var(--border)">v.gowsik@gmail.com</a></span></div>
+    </div>
+  </div>
+
+  <!-- ── WORK ── -->
+  <div class="section-block" id="work">
+    <div class="sec-label reveal">work experience</div>
+    <div class="reveal-stagger">
+
+      <div class="work-item">
+        <div class="work-header">
+          <div class="work-role">Software Developer</div>
+          <div class="work-year">Feb 2022 — present</div>
         </div>
-    </nav>
-
-    <!-- ABOUT -->
-    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-                    <div class="about-text">
-                        <small class="small-text pl-1">Welcome to <span class="mobile-block">my portfolio website!</span></small>
-                        <h1 class="animated animated-text">
-                            <span class="mr-2">Hey folks, I'm</span>
-                                <div class="animated-info">
-                                    <span class="animated-item">Gowsik V</span>
-                                    <span class="animated-item"><span class="animated-article">a</span> Software Developer</span>
-                                </div>
-                        </h1>
-
-                        <p class="pt-4 my-info">I am highly energetic in web development, devops and solving complex problems.</p>
-                        
-                        <div class="custom-btn-group mt-4">
-                          <a href="https://drive.google.com/file/d/1kbyjf_7fMu5Fo1hTjiJ3oM5ar6tDVuhO/view?usp=sharing" class="btn mr-lg-2 custom-btn" target="_blank"><i class='uil uil-file-alt'></i> Download Resume</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-5 col-md-12 col-12">
-                    <div class="about-image svg">
-                        <img src="images/undraw/developer.svg" class="img-fluid" alt="svg image">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="project py-3" id="project">
-        <div class="container">
-                
-                <div class="row">
-                  <div class="col-lg-11 text-center mx-auto col-12">
-
-                      <div class="col-lg-8 mx-auto pb-3">
-                        <h2>Projects I have worked on</h2>
-                      </div>
-
-                      <div class="owl-carousel owl-theme">
-                        <div class="item">
-                          <div class="project-info">
-                            <a href="https://www.kwickmetrics.com" target="_blank">
-                              <img src="images/project/project-1.png" class="img-fluid" alt="kwickmetrics">
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <a href="https://processkit.com" target="_blank">
-                              <img src="images/project/project-2.png" class="img-fluid" alt="processkit">
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <a href="https://zipmessage.com" target="_blank">
-                              <img src="images/project/project-3.png" class="img-fluid" alt="zipmessage">
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <a href="https://www.miru.so" target="_blank">
-                              <img src="images/project/project-4.png" class="img-fluid" alt="miru">
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <a href="https://pulsecharterconnect.com" target="_blank">
-                              <img src="images/project/project-5.png" class="img-fluid" alt="pulsecharterconnect">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                  </div>
-                </div>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-6 col-12">
-                  <h2 class="mb-4">Experiences</h2>
-
-                    <div class="timeline">
-                        <div class="timeline-wrapper">
-                          <div class="timeline-yr">
-                              <span>2022</span>
-                          </div>
-                          <div class="timeline-info">
-                            <h3>
-                              <span>Software Developer</span>
-                              <div>
-                                <small>Saeloun Technologies</small>
-                              </div>
-                            </h3>
-                            <h6>Devops</h6>
-                            <ul>
-                              <li>Migrated apps from fly to Kubernetes</li>
-                              <li>Deployed static sites to AWS amplify</li>
-                            </ul>                         
-                            <h6>Miru ( Feb '22 - )</h6>
-                            <ul>
-                              <li>Built essential features like authorization, associating users to multiple workspaces at the initial stage of the project.</li>
-                              <li>Wrote test cases to achieve 99% code coverage.</li>
-                              <li>Built custom user invitation flow.</li>
-                            </ul>
-                            <h6>Pulse Charter Connect ( Jul ’22 - )</h6>
-                            <ul>
-                              <li>Implemented elastic search for search and used server side react rendering with embedded ruby</li>
-                              <li>Deployed the app to kubernetes</li>
-                            </ul>
-                          </div>
-                        </div>
-
-                        <div class="timeline-wrapper">
-                          <div class="timeline-yr">
-                            <span>2020</span>
-                          </div>
-                          <div class="timeline-info">
-                            <h3>
-                              <span>Ruby on Rails Developer</span>
-                              <div>
-                                <small>Mallow Technologies</small>
-                              </div>
-                            </h3>                                  
-                            <h6>ZipMessage ( Dec ’20 - Feb '22 )<small>(Lead Developer)</small></h6>
-                            <ul>
-                              <li>Design application architecture, implemented video recording and used Amazon Elastic Transcoder, Lamda and SNS to transcode and save video for instant preview and download.</li>
-                              <li>Implemented multipart upload to reduce recording upload waiting time by 50%.</li>
-                              <li>Developed web extension and slack app.</li>
-                            </ul>
-                            <h6>Processkit ( Jan ’20 - Feb '22 )</h6>
-                            <ul>
-                              <li>Implemented CI/CD workflow using GitHub actions to automate the test suite and deployment.</li>
-                              <li>Fixed memory leak and performance issue in Heroku production environment.</li>
-                            </ul>
-                            </ul>
-                          </div>
-                        </div>
-
-                        <div class="timeline-wrapper">
-                          <div class="timeline-yr">
-                            <span>2019</span>
-                          </div>
-                          <div class="timeline-info">
-                            <h3>
-                              <span>Junior Ruby on Rails Developer</span>
-                              <div>
-                                <small>Mallow Technologies</small>
-                              </div>
-                            </h3>                                  
-                            <h6>Processkit ( Jan ’20 - Feb '22 )</h6>
-                            <ul>
-                              <li>Analyzed and developed features along with scripted test cases by achieved Test Driven Development (TDD).</li>
-                              <li>Optimized page load time by reducing it to around 500 - 600 ms which previously took around 3500 ms.</li>
-                            </ul>
-                            <h6>KwickMetrics ( Jun '19 - Jul '19 )</h6>
-                            <ul>
-                              <li>Managed and maintained production EC2 instance using Elastic beanstalk.</li>
-                              <li>Optimized data processing logic to reduce memory usage and process run time by 80%.</li>
-                            </ul>
-                          </div>
-                        </div>
-
-                        <div class="timeline-wrapper">
-                          <div class="timeline-yr">
-                            <span>2019</span>
-                          </div>
-                          <div class="timeline-info">
-                            <h3>
-                              <span>Developer Trainee</span>
-                              <div>
-                                <small>Mallow Technologies</small>
-                              </div>
-                            </h3>
-                            <h6>KwickMetrics ( Jun '19 - Jul '19 )</h6>
-                            <ul>
-                              <li>Designed and built Ruby application from scratch to sync data from Amazon using MWS APIs.</li>
-                              <li>Analyzed and implemented various MWS APIs based on application needs by handling throttling limits and various constraints.</li>
-                            </ul>
-                            <h6>OneFlexo ( May '19 - Jun '19 )</h6>
-                            <ul>
-                              <li>Worked on a feature that allows users to make changes in digital prepress images.</li>
-                            </ul>
-                          </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-12">
-                  <h2 class="mb-4 mobile-mt-2">Educations</h2>
-
-                    <div class="timeline">
-                        <div class="timeline-wrapper">
-                             <div class="timeline-yr">
-                                  <span>2019</span>
-                             </div>
-                             <div class="timeline-info">
-                                  <h3>B.E., Computer Science and Engineering</h3>
-                                  <p>M.Kumarasamy College of Engineering</p>
-                             </div>
-                        </div>
-
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span>2015</span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3>Higher Secondary Education</h3>
-                                <p>Kongu Matriculation Higher Secondary School</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span>2013</span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3>Secondary Education</h3>
-                                <p>Kongu Matriculation Higher Secondary School</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact py-5" id="contact">
-      <div class="container">
-        <div class="row">
-          
-          <div class="col-12">
-            <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
-                <div class="contact-info-item">
-                  <h3 class="mb-3 text-white">Say hello</h3>
-                  <div class="row px-3">
-                    <div>
-                      <a href="https://www.linkedin.com/in/gowsikragunath/" data-toggle="tooltip" data-placement="left" title="linkedin" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" d="M20.47 2H3.53a1.45 1.45 0 0 0-1.47 1.43v17.14A1.45 1.45 0 0 0 3.53 22h16.94a1.45 1.45 0 0 0 1.47-1.43V3.43A1.45 1.45 0 0 0 20.47 2ZM8.09 18.74h-3v-9h3ZM6.59 8.48a1.56 1.56 0 1 1 0-3.12a1.57 1.57 0 1 1 0 3.12Zm12.32 10.26h-3v-4.83c0-1.21-.43-2-1.52-2A1.65 1.65 0 0 0 12.85 13a2 2 0 0 0-.1.73v5h-3v-9h3V11a3 3 0 0 1 2.71-1.5c2 0 3.45 1.29 3.45 4.06Z"/></svg></a>
-                      </a>
-                    </div>
-                    <div class="px-3">
-                      <a href="mailto:v.gowsik@gmail.com" data-toggle="tooltip" data-placement="left" title="mail" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7.175q.125 0 .262-.038q.138-.037.263-.112L19.6 8.25q.2-.125.3-.312q.1-.188.1-.413q0-.5-.425-.75T18.7 6.8L12 11L5.3 6.8q-.45-.275-.875-.013Q4 7.05 4 7.525q0 .25.1.437q.1.188.3.288l7.075 4.425q.125.075.263.112q.137.038.262.038Z"/></svg>
-                      </a>
-                    </div>
-                    <div class="px-1">
-                      <a href="https://twitter.com/gowsik_ragunath" data-toggle="tooltip" data-placement="left" title="twitter" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 15 15"><path fill="currentColor" d="M14.977 1.467a.5.5 0 0 0-.87-.301a2.559 2.559 0 0 1-1.226.763A3.441 3.441 0 0 0 10.526 1a3.539 3.539 0 0 0-3.537 3.541v.44C3.998 4.75 2.4 2.477 1.967 1.325a.5.5 0 0 0-.916-.048C.004 3.373-.157 5.407.604 7.139C1.27 8.656 2.61 9.864 4.51 10.665C3.647 11.276 2.194 12 .5 12a.5.5 0 0 0-.278.916C1.847 14 3.55 14 5.132 14h.048c4.861 0 8.8-3.946 8.8-8.812v-.479c.363-.37.646-.747.82-1.236c.193-.546.232-1.178.177-2.006Z"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- <div class="col-lg-6 col-12">
-            <div class="contact-form">
-              <h2 class="mb-4">Interested to work together? Let's talk</h2>
-
-              <form action="" method="get">
-                <div class="row">
-                  <div class="col-lg-6 col-12">
-                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
-                  </div>
-
-                  <div class="col-lg-6 col-12">
-                    <input type="email" class="form-control" name="email" placeholder="Email" id="email">
-                  </div>
-
-                  <div class="col-12">
-                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
-                  </div>
-
-                  <div class="ml-lg-auto col-lg-5 col-12">
-                    <input type="submit" class="form-control submit-btn" value="Send Button">
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div> -->
-
-        </div>
+        <div class="work-company">Saeloun Technologies</div>
+        <ul class="work-bullets">
+          <li>Implemented passkey login with WebAuthn for super admin authentication</li>
+          <li>Built core auth &amp; multi-workspace features for Miru from scratch</li>
+          <li>Achieved 99% test coverage; implemented custom user invitation flow</li>
+          <li>Elastic Search with server-side React on Pulse Charter Connect</li>
+          <li>Migrated apps from Fly.io to Kubernetes; deployed static sites to AWS Amplify</li>
+        </ul>
       </div>
-    </section>
 
-    <!-- FOOTER -->
-     <!-- <footer class="footer py-5">
-          <div class="container">
-               <div class="row">
+      <div class="work-item">
+        <div class="work-header">
+          <div class="work-role">Ruby on Rails Developer</div>
+          <div class="work-year">Dec 2020 — Feb 2022</div>
+        </div>
+        <div class="work-company">Mallow Technologies — ZipMessage (Lead Dev)</div>
+        <ul class="work-bullets">
+          <li>Architected video recording pipeline with Amazon Transcoder, Lambda &amp; SNS</li>
+          <li>Implemented multipart upload — cut recording wait time by 50%</li>
+          <li>Built web browser extension + Slack app integration</li>
+          <li>CI/CD via GitHub Actions; resolved Heroku memory leak on ProcessKit</li>
+        </ul>
+      </div>
 
-                    <div class="col-lg-12 col-12">                                
-                        <p class="copyright-text text-center">Copyright &copy; 2019 Company Name . All rights reserved</p>
-                        <p class="copyright-text text-center">Designed by <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
-                    </div>
-                    
-               </div>
-          </div>
-     </footer> -->
+      <div class="work-item">
+        <div class="work-header">
+          <div class="work-role">Junior Developer → Developer Trainee</div>
+          <div class="work-year">May 2019 — Dec 2020</div>
+        </div>
+        <div class="work-company">Mallow Technologies</div>
+        <ul class="work-bullets">
+          <li>Practiced TDD on KwickMetrics &amp; ProcessKit features</li>
+          <li>Optimized page load from ~3500ms → ~550ms</li>
+          <li>Reduced memory usage &amp; process runtime by 80% on KwickMetrics</li>
+          <li>Built Ruby app from scratch for Amazon MWS API data sync</li>
+        </ul>
+      </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
+    </div>
+  </div>
 
-  </body>
+  <!-- ── PROJECTS ── -->
+  <div class="section-block" id="projects">
+    <div class="sec-label reveal">projects</div>
+    <div class="reveal-stagger">
+
+      <a class="project-card" href="https://www.kwickmetrics.com" target="_blank">
+        <div class="proj-header">
+          <div class="proj-name">KwickMetrics</div>
+          <div class="proj-arrow">↗</div>
+        </div>
+        <div class="proj-desc">Amazon seller analytics — MWS API integration, EC2 on Elastic Beanstalk, 80% runtime reduction.</div>
+        <div class="proj-tags"><span class="proj-tag">Ruby</span><span class="proj-tag">AWS</span><span class="proj-tag">MWS API</span></div>
+      </a>
+
+      <a class="project-card" href="https://processkit.com" target="_blank">
+        <div class="proj-header">
+          <div class="proj-name">ProcessKit</div>
+          <div class="proj-arrow">↗</div>
+        </div>
+        <div class="proj-desc">Business process management SaaS — GitHub Actions CI/CD, Heroku performance tuning, TDD.</div>
+        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">GitHub Actions</span><span class="proj-tag">Heroku</span></div>
+      </a>
+
+      <a class="project-card" href="https://zipmessage.com" target="_blank">
+        <div class="proj-header">
+          <div class="proj-name">ZipMessage</div>
+          <div class="proj-arrow">↗</div>
+        </div>
+        <div class="proj-desc">Async video messaging platform — Amazon Transcoder, Lambda, SNS. Slack app. 50% faster uploads.</div>
+        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">Lambda</span><span class="proj-tag">S3</span></div>
+      </a>
+
+      <a class="project-card" href="https://www.miru.so" target="_blank">
+        <div class="proj-header">
+          <div class="proj-name">Miru</div>
+          <div class="proj-arrow">↗</div>
+        </div>
+        <div class="proj-desc">Time tracking &amp; invoicing — multi-workspace auth, 99% test coverage, custom invitation flow.</div>
+        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">React</span><span class="proj-tag">RSpec</span></div>
+      </a>
+
+      <a class="project-card" href="https://pulsecharterconnect.com" target="_blank">
+        <div class="proj-header">
+          <div class="proj-name">Pulse Charter Connect</div>
+          <div class="proj-arrow">↗</div>
+        </div>
+        <div class="proj-desc">Charter marketplace — Elastic Search, server-side React with ERB, Kubernetes deploy.</div>
+        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">ElasticSearch</span><span class="proj-tag">Kubernetes</span></div>
+      </a>
+
+      <div class="project-card" style="cursor:default;">
+        <div class="proj-header">
+          <div class="proj-name">Foundation <span style="font-size:11px;color:var(--fg-muted);font-weight:400;">— discontinued</span></div>
+          <div class="proj-arrow" style="color:var(--fg-muted);">↗</div>
+        </div>
+        <div class="proj-desc">Personal finance &amp; budgeting app. Worked on it until Nov 2024. No longer active.</div>
+        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">React</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── BLOG ── -->
+  <div class="section-block" id="blog">
+    <div class="sec-label reveal">blog</div>
+    <div class="reveal">
+      <a class="blog-cta" href="https://blog.gowsik.info" target="_blank">
+        <div class="blog-left">
+          <h3>Writing about Rails, DevOps &amp; things I learn.</h3>
+          <p>Technical posts on Ruby on Rails, Kubernetes, AWS, and engineering craft.</p>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+
+      <div class="blog-posts">
+        <a class="blog-post-row" href="https://blog.gowsik.info/posts/passwordless-authentication-using-webauth" target="_blank">
+          <span class="bp-title">Implementing Passwordless Authentication with WebAuthn in Rails</span>
+          <span class="bp-meta">Nov 2024 · 7 min</span>
+        </a>
+        <a class="blog-post-row" href="https://blog.gowsik.info/posts/rails-7-1-message-pack-as-message-serializer" target="_blank">
+          <span class="bp-title">Rails 7.1 Adds Support for MessagePack as Message Serializer</span>
+          <span class="bp-meta">Nov 2023 · 4 min</span>
+        </a>
+        <a class="blog-post-row" href="https://blog.gowsik.info/posts/integrate-replicate-ai-in-rails-application" target="_blank">
+          <span class="bp-title">Integrate Replicate in Rails Application</span>
+          <span class="bp-meta">Aug 2023 · 9 min</span>
+        </a>
+        <a class="blog-post-row" href="https://blog.gowsik.info/posts/integrate-openai-api-in-ruby-application" target="_blank">
+          <span class="bp-title">Integrate OpenAI API in Ruby applications</span>
+          <span class="bp-meta">May 2023 · 13 min</span>
+        </a>
+        <a class="blog-post-row" href="https://blog.gowsik.info/posts/deploy-jekyll-blog-to-aws-amplify" target="_blank">
+          <span class="bp-title">Deploy Jekyll blog to AWS Amplify</span>
+          <span class="bp-meta">May 2023 · 5 min</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EDUCATION ── -->
+  <div class="section-block" id="education">
+    <div class="sec-label reveal">education</div>
+    <div class="reveal-stagger">
+      <div class="edu-item">
+        <div class="edu-header">
+          <div class="edu-degree">B.E., Computer Science and Engineering</div>
+          <div class="edu-year">2015 — 2019</div>
+        </div>
+        <div class="edu-inst">M. Kumarasamy College of Engineering</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-header">
+          <div class="edu-degree">Higher Secondary Education</div>
+          <div class="edu-year">2013 — 2015</div>
+        </div>
+        <div class="edu-inst">Kongu Matriculation Higher Secondary School</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SKILLS ── -->
+  <div class="section-block" id="skills">
+    <div class="sec-label reveal">skills</div>
+    <div class="skills-cols reveal-stagger">
+      <div class="skill-group">
+        <div class="skill-group-title">Backend</div>
+        <ul class="skill-list">
+          <li>Ruby on Rails</li>
+          <li>Ruby · Python</li>
+          <li>RSpec · Sidekiq</li>
+          <li>PostgreSQL · Redis</li>
+          <li>Apollo GraphQL</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Frontend</div>
+        <ul class="skill-list">
+          <li>React</li>
+          <li>JavaScript · TypeScript</li>
+          <li>Stimulus JS</li>
+          <li>HTML / CSS</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">DevOps &amp; Cloud</div>
+        <ul class="skill-list">
+          <li>Kubernetes · Docker</li>
+          <li>AWS EB · Fly.io · Heroku</li>
+          <li>Amazon Transcoder</li>
+          <li>GitHub Actions CI/CD</li>
+          <li>ElasticSearch · Bash</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <div class="section-block" id="contact">
+    <div class="sec-label reveal">contact</div>
+    <div class="reveal">
+      <div class="contact-intro">
+        <h2>Let's build something together.</h2>
+        <p>Whether it's a full product, an engineering challenge, or just a conversation — happy to connect.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link-row" href="mailto:v.gowsik@gmail.com">
+          <span class="cl-label">email</span>
+          <span class="cl-val">v.gowsik@gmail.com</span>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a class="contact-link-row" href="https://linkedin.com/in/gowsikragunath" target="_blank">
+          <span class="cl-label">linkedin</span>
+          <span class="cl-val">linkedin.com/in/gowsikragunath</span>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a class="contact-link-row" href="https://github.com/gowsik-ragunath" target="_blank">
+          <span class="cl-label">github</span>
+          <span class="cl-val">github.com/gowsik-ragunath</span>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a class="contact-link-row" href="https://blog.gowsik.info" target="_blank">
+          <span class="cl-label">blog</span>
+          <span class="cl-val">blog.gowsik.info</span>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a class="contact-link-row" href="https://drive.google.com/file/d/1kbyjf_7fMu5Fo1hTjiJ3oM5ar6tDVuhO/view" target="_blank">
+          <span class="cl-label">resume</span>
+          <span class="cl-val">download PDF</span>
+          <span class="cl-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- ── FOOTER ── -->
+<div style="border-top:1px solid var(--border); margin-top:0;">
+  <footer>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div style="width:6px;height:6px;background:var(--fg-muted);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);"></div>
+      gowsik v — software developer
+    </div>
+    <div>© 2026</div>
+  </footer>
+</div>
+
+<script>
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function typeHero() {
+  const el = document.getElementById('hero-headline');
+  const parts = [
+    { text: "Hi, I'm ", hl: false },
+    { text: "Gowsik V", hl: true },
+    { text: " —\na ", hl: false },
+    { text: "software developer", hl: true },
+    { text: "\nwho ships.", hl: false },
+  ];
+  const cursor = document.createElement('span');
+  cursor.className = 'h-cursor';
+  el.appendChild(cursor);
+
+  for (const part of parts) {
+    for (const ch of part.text) {
+      if (ch === '\n') {
+        el.insertBefore(document.createElement('br'), cursor);
+        await sleep(100);
+        continue;
+      }
+      const span = document.createElement('span');
+      span.textContent = ch;
+      if (part.hl) span.style.color = 'var(--accent)';
+      el.insertBefore(span, cursor);
+      await sleep(ch === ' ' ? 50 : 28 + Math.random() * 20);
+    }
+  }
+  await sleep(300);
+  document.getElementById('hero-sub').style.animation = 'fadeup 0.5s ease forwards';
+  await sleep(150);
+  document.getElementById('hero-links').style.animation = 'fadeup 0.5s ease 0.15s forwards';
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => obs.observe(el));
+
+// Active nav
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const navObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.style.color = '');
+      const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (link) link.style.color = 'var(--fg)';
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => navObs.observe(s));
+
+window.addEventListener('DOMContentLoaded', typeHero);
+</script>
+
+</body>
 </html>
