@@ -304,7 +304,7 @@
     <div class="nav-logo-mark"><img src="images/favicon-32x32.png" alt="gowsik"></div>
   </div>
   <ul class="nav-links">
-    <li><a href="#blog">blog</a></li>
+    <li><a href="https://blog.gowsik.info">blog</a></li>
   </ul>
 </nav>
 
@@ -483,25 +483,25 @@ function triggerGlitch() {
   document.getElementById('crt-b').setAttribute('dy', -dy);
 
   // CRT scanline artifacts — thin horizontal bars with R/G/B tints
-  const fx = document.getElementById('glitch-fx');
-  fx.innerHTML = '';
-  const colors = ['#ff2200', '#00ff41', '#0044ff', '#ffffff', '#ff2200', '#00cfff'];
-  const n = 3 + Math.floor(Math.random() * 6);
-  for (let i = 0; i < n; i++) {
-    const bar = document.createElement('div');
-    const isTear = Math.random() < 0.3;
-    Object.assign(bar.style, {
-      position: 'absolute',
-      left: isTear ? (Math.random() * 40 - 20) + 'px' : '0',
-      right: isTear ? (Math.random() * 40 - 20) + 'px' : '0',
-      top: (Math.random() * 100) + '%',
-      height: (isTear ? 12 + Math.random() * 50 : 1 + Math.random() * 2) + 'px',
-      background: colors[Math.floor(Math.random() * colors.length)],
-      opacity: (0.06 + Math.random() * 0.28).toFixed(2),
-      mixBlendMode: 'screen',
-    });
-    fx.appendChild(bar);
-  }
+  // const fx = document.getElementById('glitch-fx');
+  // fx.innerHTML = '';
+  // const colors = ['#ff2200', '#00ff41', '#0044ff', '#ffffff', '#ff2200', '#00cfff'];
+  // const n = 3 + Math.floor(Math.random() * 6);
+  // for (let i = 0; i < n; i++) {
+  //   const bar = document.createElement('div');
+  //   const isTear = Math.random() < 0.3;
+  //   Object.assign(bar.style, {
+  //     position: 'absolute',
+  //     left: isTear ? (Math.random() * 40 - 20) + 'px' : '0',
+  //     right: isTear ? (Math.random() * 40 - 20) + 'px' : '0',
+  //     top: (Math.random() * 100) + '%',
+  //     height: (isTear ? 12 + Math.random() * 50 : 1 + Math.random() * 2) + 'px',
+  //     background: colors[Math.floor(Math.random() * colors.length)],
+  //     opacity: (0.06 + Math.random() * 0.28).toFixed(2),
+  //     mixBlendMode: 'screen',
+  //   });
+  //   fx.appendChild(bar);
+  // }
 
   document.body.classList.remove('glitch-active');
   void document.body.offsetWidth;
@@ -509,17 +509,17 @@ function triggerGlitch() {
   setTimeout(() => {
     document.body.classList.remove('glitch-active');
     fx.innerHTML = '';
-  }, 240);
+  }, 640);
 }
 
 function startLoadingGlitch() {
   triggerGlitch();
-  _loadGlitch = setInterval(() => { if (Math.random() < 0.55) triggerGlitch(); }, 450);
+  _loadGlitch = setInterval(() => { if (Math.random() < 0.55) triggerGlitch(); }, 820);
 }
 
 function stopLoadingGlitch() {
   clearInterval(_loadGlitch);
-  setInterval(() => { if (Math.random() < 0.18) triggerGlitch(); }, 4000);
+  setInterval(() => { if (Math.random() < 0.18) triggerGlitch(); }, 2000);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
