@@ -270,6 +270,24 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ─── GLITCH ──────────────────────────────── */
+    #glitch-fx {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    @keyframes crt-flash {
+      0%   { filter: url(#crt-rgb) brightness(2.2) contrast(3); }
+      20%  { filter: url(#crt-rgb) brightness(0.4) contrast(2.5); }
+      40%  { filter: url(#crt-rgb) brightness(1.9) contrast(2.8) saturate(0.2); }
+      60%  { filter: url(#crt-rgb) brightness(0.6) contrast(2); }
+      80%  { filter: url(#crt-rgb) brightness(1.4) contrast(1.8); }
+      100% { filter: none; }
+    }
+    body.glitch-active { animation: crt-flash 0.22s steps(4) forwards; }
+
     /* ─── RESPONSIVE ──────────────────────────── */
     @media (max-width: 680px) {
       nav { padding: 0 20px; }
@@ -313,6 +331,26 @@
   </div>
 
 </div>
+
+<!-- CRT RGB-split filter -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="crt-rgb" x="-20%" y="-10%" width="140%" height="120%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="matrix"
+        values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/>
+      <feColorMatrix in="SourceGraphic" type="matrix"
+        values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+      <feColorMatrix in="SourceGraphic" type="matrix"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+      <feOffset in="r" id="crt-r" dx="-8" dy="1" result="ro"/>
+      <feOffset in="b" id="crt-b" dx="8" dy="-1" result="bo"/>
+      <feBlend in="ro" in2="g" mode="screen" result="rg"/>
+      <feBlend in="rg" in2="bo" mode="screen"/>
+    </filter>
+  </defs>
+</svg>
+
+<div id="glitch-fx" aria-hidden="true"></div>
 
 <script>
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -420,7 +458,7 @@ async function typeBlogSection(postsPromise, cursor) {
       const s = document.createElement('span');
       s.textContent = ch;
       titleEl.insertBefore(s, cursor);
-      await sleep(9 + Math.random() * 12);
+      await sleep(2 + Math.random() * 3);
     }
     metaEl.style.transition = 'opacity 0.2s ease';
     metaEl.style.opacity = '1';
@@ -432,9 +470,62 @@ async function typeBlogSection(postsPromise, cursor) {
   document.getElementById('blog-all-link').style.opacity = '1';
 }
 
+/* ── glitch engine ── */
+let _loadGlitch;
+
+function triggerGlitch() {
+  // Randomise RGB split distance each time
+  const spread = 5 + Math.random() * 14;
+  const dy = Math.random() < 0.5 ? 1 : -1;
+  document.getElementById('crt-r').setAttribute('dx', (-spread).toFixed(1));
+  document.getElementById('crt-r').setAttribute('dy', dy);
+  document.getElementById('crt-b').setAttribute('dx', spread.toFixed(1));
+  document.getElementById('crt-b').setAttribute('dy', -dy);
+
+  // CRT scanline artifacts — thin horizontal bars with R/G/B tints
+  const fx = document.getElementById('glitch-fx');
+  fx.innerHTML = '';
+  const colors = ['#ff2200', '#00ff41', '#0044ff', '#ffffff', '#ff2200', '#00cfff'];
+  const n = 3 + Math.floor(Math.random() * 6);
+  for (let i = 0; i < n; i++) {
+    const bar = document.createElement('div');
+    const isTear = Math.random() < 0.3;
+    Object.assign(bar.style, {
+      position: 'absolute',
+      left: isTear ? (Math.random() * 40 - 20) + 'px' : '0',
+      right: isTear ? (Math.random() * 40 - 20) + 'px' : '0',
+      top: (Math.random() * 100) + '%',
+      height: (isTear ? 12 + Math.random() * 50 : 1 + Math.random() * 2) + 'px',
+      background: colors[Math.floor(Math.random() * colors.length)],
+      opacity: (0.06 + Math.random() * 0.28).toFixed(2),
+      mixBlendMode: 'screen',
+    });
+    fx.appendChild(bar);
+  }
+
+  document.body.classList.remove('glitch-active');
+  void document.body.offsetWidth;
+  document.body.classList.add('glitch-active');
+  setTimeout(() => {
+    document.body.classList.remove('glitch-active');
+    fx.innerHTML = '';
+  }, 240);
+}
+
+function startLoadingGlitch() {
+  triggerGlitch();
+  _loadGlitch = setInterval(() => { if (Math.random() < 0.55) triggerGlitch(); }, 450);
+}
+
+function stopLoadingGlitch() {
+  clearInterval(_loadGlitch);
+  setInterval(() => { if (Math.random() < 0.18) triggerGlitch(); }, 4000);
+}
+
 window.addEventListener('DOMContentLoaded', () => {
+  startLoadingGlitch();
   const postsPromise = fetchBlogData();
-  typeHero().then(cursor => typeBlogSection(postsPromise, cursor));
+  typeHero().then(cursor => typeBlogSection(postsPromise, cursor).then(stopLoadingGlitch));
 });
 </script>
 
