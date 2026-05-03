@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Gowsik V">
+  <meta name="author" content="Gowsik">
 
-  <meta property="og:title" content="Gowsik V — Software Developer">
+  <meta property="og:title" content="Gowsik - Software Developer">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gowsik.info/">
   <meta property="og:site_name" content="Gowsik">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="https://gowsik.info/">
-  <meta name="twitter:title" content="Gowsik V — Software Developer">
+  <meta name="twitter:title" content="Gowsik - Software Developer">
 
-  <title>Gowsik V — Software Developer</title>
+  <title>Gowsik - Software Developer</title>
 
   <link rel="icon" type="image/x-icon" href="images/favicon-dark.ico">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
@@ -31,17 +31,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #ffffff;
-      --bg2:       #f6f6f4;
-      --bg3:       #efefec;
-      --fg:        #1a1a1a;
-      --fg-dim:    #555550;
-      --fg-muted:  #999990;
-      --accent:    #d97706;
-      --accent-lt: #fef3c7;
-      --border:    #e4e4e0;
-      --font:      'JetBrains Mono', monospace;
-      --font-mono: 'JetBrains Mono', monospace;
+      --bg:       #0d0d0d;
+      --bg2:      #141414;
+      --bg3:      #1a1a1a;
+      --fg:       #e8e8e8;
+      --fg-dim:   #a0a0a0;
+      --fg-muted: #555555;
+      --accent:   #00ff41;
+      --border:   #222222;
+      --font:     'JetBrains Mono', monospace;
     }
 
     html { scroll-behavior: smooth; }
@@ -62,7 +60,7 @@
       position: sticky;
       top: 0;
       z-index: 500;
-      background: rgba(255,255,255,0.92);
+      background: rgba(13,13,13,0.92);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -77,15 +75,19 @@
       align-items: center;
       gap: 10px;
       font-size: 13px;
-      font-family: var(--font-mono);
       font-weight: 700;
       color: var(--fg);
       letter-spacing: -0.01em;
     }
     .nav-logo-mark {
-      width: 8px; height: 8px;
-      background: var(--accent);
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      width: 24px; height: 24px;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .nav-logo-mark img {
+      width: 100%; height: 100%;
+      display: block;
     }
 
     .nav-links {
@@ -106,12 +108,10 @@
       max-width: 760px;
       margin: 0 auto;
       padding: 96px 48px 80px;
-      border-bottom: 1px solid var(--border);
     }
 
     .hero-prompt {
       font-size: 12px;
-      font-family: var(--font-mono);
       color: var(--accent);
       letter-spacing: 0.06em;
       margin-bottom: 24px;
@@ -125,7 +125,6 @@
       color: var(--fg);
       min-height: 2.4em;
     }
-    .hero-headline .hl { color: var(--accent); }
 
     .h-cursor {
       display: inline-block;
@@ -158,11 +157,10 @@
       color: var(--fg-muted);
       width: fit-content;
       transition: color 0.15s;
-      border-bottom: 1px solid transparent;
     }
     .hero-links a:first-child {
       color: var(--fg);
-      border-bottom-color: var(--border);
+      border-bottom: 1px solid var(--border);
       padding-bottom: 1px;
     }
     .hero-links a:hover { color: var(--accent); }
@@ -177,12 +175,10 @@
     /* ─── SECTION ─────────────────────────────── */
     .section-block {
       padding: 72px 0;
-      border-bottom: 1px solid var(--border);
     }
 
     .sec-label {
       font-size: 11px;
-      font-family: var(--font-mono);
       color: var(--accent);
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -196,136 +192,6 @@
       flex: 1;
       height: 1px;
       background: var(--border);
-    }
-
-    /* ─── ABOUT ───────────────────────────────── */
-    .about-text h2 {
-      font-size: clamp(22px, 2.8vw, 32px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      color: var(--fg);
-      margin-bottom: 20px;
-    }
-    .about-text p {
-      color: var(--fg-dim);
-      font-size: 13px;
-      line-height: 1.9;
-      margin-bottom: 14px;
-    }
-
-    .about-facts {
-      margin-top: 32px;
-      border-top: 1px solid var(--border);
-    }
-    .fact-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid var(--border);
-      padding: 12px 0;
-      font-size: 12px;
-    }
-    .fact-key { font-family: var(--font-mono); color: var(--fg-muted); letter-spacing: 0.06em; font-size: 11px; }
-    .fact-val { color: var(--fg); }
-
-    /* ─── WORK ────────────────────────────────── */
-    .work-item {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .work-item:first-child { border-top: 1px solid var(--border); }
-
-    .work-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 6px;
-    }
-    .work-role {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--fg);
-    }
-    .work-year {
-      font-size: 11px;
-      font-family: var(--font-mono);
-      color: var(--fg-muted);
-      letter-spacing: 0.06em;
-    }
-    .work-company {
-      font-size: 12px;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .work-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .work-bullets li {
-      font-size: 12px;
-      color: var(--fg-dim);
-      padding-left: 14px;
-      position: relative;
-    }
-    .work-bullets li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--fg-muted);
-      font-size: 11px;
-    }
-
-    /* ─── PROJECTS ────────────────────────────── */
-    .project-card {
-      display: block;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
-      cursor: pointer;
-    }
-    .project-card:first-child { border-top: 1px solid var(--border); }
-
-    .proj-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 6px;
-    }
-    .proj-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--fg);
-      transition: color 0.15s;
-    }
-    .project-card:hover .proj-name { color: var(--accent); }
-    .proj-arrow {
-      font-size: 14px;
-      color: var(--fg-muted);
-      transition: color 0.15s, transform 0.15s;
-    }
-    .project-card:hover .proj-arrow { color: var(--accent); transform: translate(2px, -2px); }
-    .proj-desc {
-      font-size: 12px;
-      color: var(--fg-dim);
-      line-height: 1.8;
-      margin-bottom: 10px;
-    }
-    .proj-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .proj-tag {
-      font-size: 10px;
-      font-family: var(--font-mono);
-      color: var(--fg-muted);
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      padding: 2px 8px;
-      letter-spacing: 0.05em;
     }
 
     /* ─── BLOG ────────────────────────────────── */
@@ -365,7 +231,6 @@
       margin-top: 20px;
       display: flex;
       flex-direction: column;
-      gap: 0;
     }
     .blog-post-row {
       display: flex;
@@ -394,137 +259,11 @@
     }
     .bp-meta {
       color: var(--fg-muted);
-      font-family: var(--font-mono);
       font-size: 11px;
       flex-shrink: 0;
       white-space: nowrap;
     }
 
-    /* ─── EDUCATION ───────────────────────────── */
-    .edu-item {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .edu-item:first-child { border-top: 1px solid var(--border); }
-    .edu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .edu-degree { font-size: 13px; font-weight: 700; color: var(--fg); }
-    .edu-year { font-size: 11px; font-family: var(--font-mono); color: var(--fg-muted); }
-    .edu-inst { font-size: 12px; color: var(--fg-dim); margin-top: 3px; }
-
-    /* ─── SKILLS ──────────────────────────────── */
-    .skills-cols {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .skill-group {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      padding: 24px;
-    }
-    .skill-group-title {
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-    .skill-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-    .skill-list li {
-      font-size: 12px;
-      font-family: var(--font-mono);
-      color: var(--fg-dim);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .skill-list li::before {
-      content: '';
-      width: 3px; height: 3px;
-      background: var(--fg-muted);
-      flex-shrink: 0;
-    }
-
-    /* ─── CONTACT ─────────────────────────────── */
-    .contact-intro {
-      margin-bottom: 32px;
-    }
-    .contact-intro h2 {
-      font-size: clamp(20px, 2.5vw, 28px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--fg);
-      margin-bottom: 12px;
-    }
-    .contact-intro p {
-      font-size: 13px;
-      color: var(--fg-dim);
-      max-width: 460px;
-      line-height: 1.85;
-    }
-    .contact-links { display: flex; flex-direction: column; }
-    .contact-link-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid var(--border);
-      padding: 16px 0;
-      font-size: 12px;
-      color: var(--fg-dim);
-      cursor: pointer;
-      transition: color 0.15s;
-      gap: 12px;
-    }
-    .contact-link-row:last-child { border-bottom: 1px solid var(--border); }
-    .contact-link-row:hover { color: var(--fg); }
-    .contact-link-row:hover .cl-arrow { color: var(--accent); }
-    .cl-label { color: var(--fg-muted); min-width: 60px; letter-spacing: 0.04em; }
-    .cl-val { flex: 1; }
-    .cl-arrow { color: var(--fg-muted); transition: color 0.15s; }
-
-    /* ─── FOOTER ──────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--fg-muted);
-      letter-spacing: 0.04em;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    /* ─── SCROLL REVEAL ───────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .reveal.in { opacity: 1; transform: translateY(0); }
-
-    .reveal-stagger > * {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.45s ease, transform 0.45s ease;
-    }
-    .reveal-stagger.in > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.04s }
-    .reveal-stagger.in > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.10s }
-    .reveal-stagger.in > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.16s }
-    .reveal-stagger.in > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.22s }
-    .reveal-stagger.in > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.28s }
-    .reveal-stagger.in > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.34s }
 
     @keyframes fadeup {
       from { opacity: 0; transform: translateY(8px); }
@@ -534,10 +273,8 @@
     /* ─── RESPONSIVE ──────────────────────────── */
     @media (max-width: 680px) {
       nav { padding: 0 20px; }
-      .nav-links { gap: 18px; }
       #hero, .page-wrap { padding-left: 20px; padding-right: 20px; }
-      .skills-cols { grid-template-columns: 1fr; }
-      footer { padding: 24px 20px; flex-direction: column; gap: 8px; }
+      .scroll-hint { left: 20px; }
     }
   </style>
 </head>
@@ -546,15 +283,10 @@
 <!-- ── NAV ── -->
 <nav>
   <div class="nav-logo">
-    <div class="nav-logo-mark"></div>
-    gowsik
+    <div class="nav-logo-mark"><img src="images/favicon-32x32.png" alt="gowsik"></div>
   </div>
   <ul class="nav-links">
-    <li><a href="#about">about</a></li>
-    <li><a href="#work">work</a></li>
-    <li><a href="#projects">projects</a></li>
     <li><a href="#blog">blog</a></li>
-    <li><a href="#contact">contact</a></li>
   </ul>
 </nav>
 
@@ -564,10 +296,8 @@
   <div class="hero-headline" id="hero-headline"></div>
   <div class="hero-sub" id="hero-sub">
     I build products that scale — web apps, DevOps pipelines, and everything in between.
-    Based in India, open to remote.
   </div>
   <div class="hero-links" id="hero-links">
-    <a href="mailto:v.gowsik@gmail.com">v.gowsik@gmail.com</a>
     <a href="https://github.com/gowsik-ragunath" target="_blank">github ↗</a>
     <a href="https://blog.gowsik.info" target="_blank">blog ↗</a>
     <a href="https://drive.google.com/file/d/1kbyjf_7fMu5Fo1hTjiJ3oM5ar6tDVuhO/view" target="_blank">resume ↗</a>
@@ -576,272 +306,12 @@
 
 <div class="page-wrap">
 
-  <!-- ── ABOUT ── -->
-  <div class="section-block" id="about">
-    <div class="sec-label reveal">about</div>
-    <div class="about-text reveal">
-      <h2>Software developer who ships.</h2>
-      <p>I'm Gowsik V — a full-stack developer with a focus on Ruby on Rails, React, and cloud infrastructure. I enjoy working at the intersection of clean architecture and fast iteration.</p>
-      <p>From bootstrapping early-stage SaaS products to deploying at scale on Kubernetes, I've been across the stack — and I'm happiest when there's a hard problem to solve.</p>
-    </div>
-    <div class="about-facts reveal">
-      <div class="fact-row"><span class="fact-key">location</span><span class="fact-val">Namakkal, Tamil Nadu</span></div>
-      <div class="fact-row"><span class="fact-key">focus</span><span class="fact-val">Web · DevOps · Systems</span></div>
-      <div class="fact-row"><span class="fact-key">experience</span><span class="fact-val">6+ years</span></div>
-      <div class="fact-row"><span class="fact-key">availability</span><span class="fact-val" style="color:var(--accent)">● open to work</span></div>
-      <div class="fact-row"><span class="fact-key">contact</span><span class="fact-val"><a href="mailto:v.gowsik@gmail.com" style="border-bottom:1px solid var(--border)">v.gowsik@gmail.com</a></span></div>
-    </div>
-  </div>
-
-  <!-- ── WORK ── -->
-  <div class="section-block" id="work">
-    <div class="sec-label reveal">work experience</div>
-    <div class="reveal-stagger">
-
-      <div class="work-item">
-        <div class="work-header">
-          <div class="work-role">Software Developer</div>
-          <div class="work-year">Feb 2022 — present</div>
-        </div>
-        <div class="work-company">Saeloun Technologies</div>
-        <ul class="work-bullets">
-          <li>Implemented passkey login with WebAuthn for super admin authentication</li>
-          <li>Built core auth &amp; multi-workspace features for Miru from scratch</li>
-          <li>Achieved 99% test coverage; implemented custom user invitation flow</li>
-          <li>Elastic Search with server-side React on Pulse Charter Connect</li>
-          <li>Migrated apps from Fly.io to Kubernetes; deployed static sites to AWS Amplify</li>
-        </ul>
-      </div>
-
-      <div class="work-item">
-        <div class="work-header">
-          <div class="work-role">Ruby on Rails Developer</div>
-          <div class="work-year">Dec 2020 — Feb 2022</div>
-        </div>
-        <div class="work-company">Mallow Technologies — ZipMessage (Lead Dev)</div>
-        <ul class="work-bullets">
-          <li>Architected video recording pipeline with Amazon Transcoder, Lambda &amp; SNS</li>
-          <li>Implemented multipart upload — cut recording wait time by 50%</li>
-          <li>Built web browser extension + Slack app integration</li>
-          <li>CI/CD via GitHub Actions; resolved Heroku memory leak on ProcessKit</li>
-        </ul>
-      </div>
-
-      <div class="work-item">
-        <div class="work-header">
-          <div class="work-role">Junior Developer → Developer Trainee</div>
-          <div class="work-year">May 2019 — Dec 2020</div>
-        </div>
-        <div class="work-company">Mallow Technologies</div>
-        <ul class="work-bullets">
-          <li>Practiced TDD on KwickMetrics &amp; ProcessKit features</li>
-          <li>Optimized page load from ~3500ms → ~550ms</li>
-          <li>Reduced memory usage &amp; process runtime by 80% on KwickMetrics</li>
-          <li>Built Ruby app from scratch for Amazon MWS API data sync</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ── PROJECTS ── -->
-  <div class="section-block" id="projects">
-    <div class="sec-label reveal">projects</div>
-    <div class="reveal-stagger">
-
-      <a class="project-card" href="https://www.kwickmetrics.com" target="_blank">
-        <div class="proj-header">
-          <div class="proj-name">KwickMetrics</div>
-          <div class="proj-arrow">↗</div>
-        </div>
-        <div class="proj-desc">Amazon seller analytics — MWS API integration, EC2 on Elastic Beanstalk, 80% runtime reduction.</div>
-        <div class="proj-tags"><span class="proj-tag">Ruby</span><span class="proj-tag">AWS</span><span class="proj-tag">MWS API</span></div>
-      </a>
-
-      <a class="project-card" href="https://processkit.com" target="_blank">
-        <div class="proj-header">
-          <div class="proj-name">ProcessKit</div>
-          <div class="proj-arrow">↗</div>
-        </div>
-        <div class="proj-desc">Business process management SaaS — GitHub Actions CI/CD, Heroku performance tuning, TDD.</div>
-        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">GitHub Actions</span><span class="proj-tag">Heroku</span></div>
-      </a>
-
-      <a class="project-card" href="https://zipmessage.com" target="_blank">
-        <div class="proj-header">
-          <div class="proj-name">ZipMessage</div>
-          <div class="proj-arrow">↗</div>
-        </div>
-        <div class="proj-desc">Async video messaging platform — Amazon Transcoder, Lambda, SNS. Slack app. 50% faster uploads.</div>
-        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">Lambda</span><span class="proj-tag">S3</span></div>
-      </a>
-
-      <a class="project-card" href="https://www.miru.so" target="_blank">
-        <div class="proj-header">
-          <div class="proj-name">Miru</div>
-          <div class="proj-arrow">↗</div>
-        </div>
-        <div class="proj-desc">Time tracking &amp; invoicing — multi-workspace auth, 99% test coverage, custom invitation flow.</div>
-        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">React</span><span class="proj-tag">RSpec</span></div>
-      </a>
-
-      <a class="project-card" href="https://pulsecharterconnect.com" target="_blank">
-        <div class="proj-header">
-          <div class="proj-name">Pulse Charter Connect</div>
-          <div class="proj-arrow">↗</div>
-        </div>
-        <div class="proj-desc">Charter marketplace — Elastic Search, server-side React with ERB, Kubernetes deploy.</div>
-        <div class="proj-tags"><span class="proj-tag">Rails</span><span class="proj-tag">ElasticSearch</span><span class="proj-tag">Kubernetes</span></div>
-      </a>
-
-
-    </div>
-  </div>
-
   <!-- ── BLOG ── -->
-  <div class="section-block" id="blog">
-    <div class="sec-label reveal">blog</div>
-    <div class="reveal">
-      <a class="blog-cta" href="https://blog.gowsik.info" target="_blank">
-        <div class="blog-left">
-          <h3>Writing about Rails, DevOps &amp; things I learn.</h3>
-          <p>Technical posts on Ruby on Rails, Kubernetes, AWS, and engineering craft.</p>
-        </div>
-        <div class="blog-arrow">→</div>
-      </a>
-
-      <div class="blog-posts">
-        <a class="blog-post-row" href="https://blog.gowsik.info/posts/passwordless-authentication-using-webauth" target="_blank">
-          <span class="bp-title">Implementing Passwordless Authentication with WebAuthn in Rails</span>
-          <span class="bp-meta">Nov 2024 · 7 min</span>
-        </a>
-        <a class="blog-post-row" href="https://blog.gowsik.info/posts/rails-7-1-message-pack-as-message-serializer" target="_blank">
-          <span class="bp-title">Rails 7.1 Adds Support for MessagePack as Message Serializer</span>
-          <span class="bp-meta">Nov 2023 · 4 min</span>
-        </a>
-        <a class="blog-post-row" href="https://blog.gowsik.info/posts/integrate-replicate-ai-in-rails-application" target="_blank">
-          <span class="bp-title">Integrate Replicate in Rails Application</span>
-          <span class="bp-meta">Aug 2023 · 9 min</span>
-        </a>
-        <a class="blog-post-row" href="https://blog.gowsik.info/posts/integrate-openai-api-in-ruby-application" target="_blank">
-          <span class="bp-title">Integrate OpenAI API in Ruby applications</span>
-          <span class="bp-meta">May 2023 · 13 min</span>
-        </a>
-        <a class="blog-post-row" href="https://blog.gowsik.info/posts/deploy-jekyll-blog-to-aws-amplify" target="_blank">
-          <span class="bp-title">Deploy Jekyll blog to AWS Amplify</span>
-          <span class="bp-meta">May 2023 · 5 min</span>
-        </a>
-      </div>
-    </div>
+  <div class="section-block" id="blog" style="visibility:hidden">
+    <div class="sec-label"><span id="blog-label"></span><a href="https://blog.gowsik.info" target="_blank" style="font-size:10px;letter-spacing:0.1em;color:var(--fg-muted);margin-left:4px;opacity:0;transition:opacity 0.3s ease;" id="blog-all-link">↗ all posts</a></div>
+    <div class="blog-posts" id="blog-posts"></div>
   </div>
 
-  <!-- ── EDUCATION ── -->
-  <div class="section-block" id="education">
-    <div class="sec-label reveal">education</div>
-    <div class="reveal-stagger">
-      <div class="edu-item">
-        <div class="edu-header">
-          <div class="edu-degree">B.E., Computer Science and Engineering</div>
-          <div class="edu-year">2015 — 2019</div>
-        </div>
-        <div class="edu-inst">M. Kumarasamy College of Engineering</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-header">
-          <div class="edu-degree">Higher Secondary Education</div>
-          <div class="edu-year">2013 — 2015</div>
-        </div>
-        <div class="edu-inst">Kongu Matriculation Higher Secondary School</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── SKILLS ── -->
-  <div class="section-block" id="skills">
-    <div class="sec-label reveal">skills</div>
-    <div class="skills-cols reveal-stagger">
-      <div class="skill-group">
-        <div class="skill-group-title">Backend</div>
-        <ul class="skill-list">
-          <li>Ruby on Rails</li>
-          <li>Ruby · Python</li>
-          <li>RSpec · Sidekiq</li>
-          <li>PostgreSQL · Redis</li>
-          <li>Apollo GraphQL</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Frontend</div>
-        <ul class="skill-list">
-          <li>React</li>
-          <li>JavaScript · TypeScript</li>
-          <li>Stimulus JS</li>
-          <li>HTML / CSS</li>
-          <li>Tailwind CSS</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">DevOps &amp; Cloud</div>
-        <ul class="skill-list">
-          <li>Kubernetes · Docker</li>
-          <li>AWS EB · Fly.io · Heroku</li>
-          <li>Amazon Transcoder</li>
-          <li>GitHub Actions CI/CD</li>
-          <li>ElasticSearch · Bash</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── CONTACT ── -->
-  <div class="section-block" id="contact">
-    <div class="sec-label reveal">contact</div>
-    <div class="reveal">
-      <div class="contact-intro">
-        <h2>Let's build something together.</h2>
-        <p>Whether it's a full product, an engineering challenge, or just a conversation — happy to connect.</p>
-      </div>
-      <div class="contact-links">
-        <a class="contact-link-row" href="mailto:v.gowsik@gmail.com">
-          <span class="cl-label">email</span>
-          <span class="cl-val">v.gowsik@gmail.com</span>
-          <span class="cl-arrow">↗</span>
-        </a>
-        <a class="contact-link-row" href="https://linkedin.com/in/gowsikragunath" target="_blank">
-          <span class="cl-label">linkedin</span>
-          <span class="cl-val">linkedin.com/in/gowsikragunath</span>
-          <span class="cl-arrow">↗</span>
-        </a>
-        <a class="contact-link-row" href="https://github.com/gowsik-ragunath" target="_blank">
-          <span class="cl-label">github</span>
-          <span class="cl-val">github.com/gowsik-ragunath</span>
-          <span class="cl-arrow">↗</span>
-        </a>
-        <a class="contact-link-row" href="https://blog.gowsik.info" target="_blank">
-          <span class="cl-label">blog</span>
-          <span class="cl-val">blog.gowsik.info</span>
-          <span class="cl-arrow">↗</span>
-        </a>
-        <a class="contact-link-row" href="https://drive.google.com/file/d/1kbyjf_7fMu5Fo1hTjiJ3oM5ar6tDVuhO/view" target="_blank">
-          <span class="cl-label">resume</span>
-          <span class="cl-val">download PDF</span>
-          <span class="cl-arrow">↗</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /page-wrap -->
-
-<!-- ── FOOTER ── -->
-<div style="border-top:1px solid var(--border); margin-top:0;">
-  <footer>
-    <div style="display:flex;align-items:center;gap:8px;">
-      <div style="width:6px;height:6px;background:var(--fg-muted);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);"></div>
-      gowsik v — software developer
-    </div>
-
-  </footer>
 </div>
 
 <script>
@@ -851,7 +321,7 @@ async function typeHero() {
   const el = document.getElementById('hero-headline');
   const parts = [
     { text: "Hi, I'm ", hl: false },
-    { text: "Gowsik V", hl: true },
+    { text: "Gowsik", hl: true },
     { text: " —\na ", hl: false },
     { text: "software developer", hl: true },
     { text: "\nwho ships.", hl: false },
@@ -878,31 +348,94 @@ async function typeHero() {
   document.getElementById('hero-sub').style.animation = 'fadeup 0.5s ease forwards';
   await sleep(150);
   document.getElementById('hero-links').style.animation = 'fadeup 0.5s ease 0.15s forwards';
+  await sleep(400);
+  return cursor;
 }
 
-// Scroll reveal
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => obs.observe(el));
-
-// Active nav
-const sections = document.querySelectorAll('[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-const navObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(a => a.style.color = '');
-      const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-      if (link) link.style.color = 'var(--fg)';
+async function fetchBlogData() {
+  const FEED = 'https://blog.gowsik.info/rss.xml';
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function parse(xmlText) {
+    const xml   = new DOMParser().parseFromString(xmlText, 'text/xml');
+    const items = Array.from(xml.querySelectorAll('item')).slice(0, 5);
+    if (!items.length) throw new Error('no items');
+    return items.map(item => {
+      const title = item.querySelector('title')?.textContent || '';
+      const link  = item.querySelector('link')?.textContent || '#';
+      const raw   = item.querySelector('pubDate')?.textContent || '';
+      const d     = new Date(raw);
+      return { title, link, date: isNaN(d) ? '' : months[d.getMonth()] + ' ' + d.getFullYear() };
+    });
+  }
+  try {
+    return parse(await (await fetch(FEED)).text());
+  } catch {
+    try {
+      const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(FEED);
+      return parse((await (await fetch(proxy)).json()).contents);
+    } catch {
+      return [{ title: 'Read all posts on the blog ↗', link: 'https://blog.gowsik.info', date: '' }];
     }
-  });
-}, { threshold: 0.4 });
-sections.forEach(s => navObs.observe(s));
+  }
+}
 
-window.addEventListener('DOMContentLoaded', typeHero);
+async function typeBlogSection(postsPromise, cursor) {
+  const section = document.getElementById('blog');
+  section.style.visibility = 'visible';
+
+  // move cursor to blog label and type "blog"
+  const labelEl = document.getElementById('blog-label');
+  labelEl.appendChild(cursor);
+  for (const ch of 'blog') {
+    const s = document.createElement('span');
+    s.textContent = ch;
+    labelEl.insertBefore(s, cursor);
+    await sleep(10 + Math.random() * 30);
+  }
+  await sleep(150);
+
+  // wait for fetch then type each post title
+  const posts = await postsPromise;
+  const container = document.getElementById('blog-posts');
+
+  for (const post of posts) {
+    const row = document.createElement('a');
+    row.className = 'blog-post-row';
+    row.href = post.link;
+    row.target = '_blank';
+
+    const titleEl = document.createElement('span');
+    titleEl.className = 'bp-title';
+    const metaEl = document.createElement('span');
+    metaEl.className = 'bp-meta';
+    metaEl.style.opacity = '0';
+    metaEl.textContent = post.date;
+
+    row.appendChild(titleEl);
+    row.appendChild(metaEl);
+    container.appendChild(row);
+
+    titleEl.appendChild(cursor);
+    for (const ch of post.title) {
+      const s = document.createElement('span');
+      s.textContent = ch;
+      titleEl.insertBefore(s, cursor);
+      await sleep(9 + Math.random() * 12);
+    }
+    metaEl.style.transition = 'opacity 0.2s ease';
+    metaEl.style.opacity = '1';
+    await sleep(80);
+  }
+
+  // send cursor back to hero headline
+  document.getElementById('hero-headline').appendChild(cursor);
+  document.getElementById('blog-all-link').style.opacity = '1';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const postsPromise = fetchBlogData();
+  typeHero().then(cursor => typeBlogSection(postsPromise, cursor));
+});
 </script>
 
 </body>
